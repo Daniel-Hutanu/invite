@@ -1,4 +1,6 @@
 Screenshot*.png
+m[0-9].png
+DEMO.md
 node_modules/
 .DS_Store
 Thumbs.db
