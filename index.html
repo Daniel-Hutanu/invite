@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Ești invitat la nunta noastră</title>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Imperial+Script&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="assets/scss/main.css" />
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollSmoother.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/SplitText.min.js"></script>
+    </head>
+    <body>
+        <canvas id="hearts"></canvas>
+        <div class="letter-overlay">
+            <div class="overlay-greeting">
+                <div class="letter-ornament">
+                    <span class="ornament-line"></span>
+                    <svg
+                        class="ornament-icon"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        aria-hidden="true"
+                    >
+                        <path
+                            d="M12 21s-7.5-4.5-9.5-9C1 9 2.5 5 6 5c2 0 3.5 1 4 2.5C10.5 6 12 5 14 5c3.5 0 5 4 3.5 7-2 4.5-5.5 9-5.5 9z"
+                        />
+                    </svg>
+                    <span class="ornament-line"></span>
+                </div>
+                <p class="imperial text-6xl">Ioana &amp; Mihai</p>
+            </div>
+        </div>
+        <div id="smooth-wrapper">
+            <div id="smooth-content">
+                <div class="i-scene-wrapper">
+                    <div class="container mx-auto">
+                        <div class="i-scene text-center">
+                            <div>
+                                <p id="intro-title" class="text-9xl imperial">
+                                    Ioana & Mihai
+                                </p>
+                                <p
+                                    id="intro-date"
+                                    class="text-5xl cinzel mt-4 medium"
+                                >
+                                    26.07.2027
+                                </p>
+                                <div class="plic-wrapper" id="plic-wrapper">
+                                    <div class="plic" id="plic-invitatie">
+                                        <div class="plic-face">
+                                            <div class="cover">
+                                                <div class="middle-point">
+                                                    <span
+                                                        class="imperial text-5xl"
+                                                        >&amp;</span
+                                                    >
+                                                </div>
+                                            </div>
+                                            <div class="letter-fake">
+                                                <div class="letter-ornament">
+                                                    <span
+                                                        class="ornament-line"
+                                                    ></span>
+                                                    <svg
+                                                        class="ornament-icon"
+                                                        viewBox="0 0 24 24"
+                                                        fill="currentColor"
+                                                        aria-hidden="true"
+                                                    >
+                                                        <path
+                                                            d="M12 21s-7.5-4.5-9.5-9C1 9 2.5 5 6 5c2 0 3.5 1 4 2.5C10.5 6 12 5 14 5c3.5 0 5 4 3.5 7-2 4.5-5.5 9-5.5 9z"
+                                                        />
+                                                    </svg>
+                                                    <span
+                                                        class="ornament-line"
+                                                    ></span>
+                                                </div>
+                                                <p class="imperial text-6xl">
+                                                    Ioana &amp; Mihai
+                                                </p>
+                                            </div>
+                                            <img
+                                                class="plic-bg"
+                                                src="assets/img/envelope-back-transparent.png"
+                                                alt=""
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="text-sm upper" id="click-plic">
+                                        Apasă pentru a deschide
+                                    </div>
+                                    <img
+                                        src="assets/img/trandafir.png"
+                                        width="50"
+                                        height="50"
+                                        id="trandafir-img"
+                                        alt=""
+                                    />
+                                </div>
+                                <p
+                                    id="intro-tagline"
+                                    class="mt-4 text-2xl medium"
+                                >
+                                    Pentru totdeauna începe în...
+                                </p>
+                                <div
+                                    class="countdown mt-4"
+                                    id="countdown"
+                                    data-targetdate="2027-07-26T12:00:00"
+                                ></div>
+                            </div>
+                        </div>
+                    </div>
+                    <img
+                        src="assets/img/buchet-3.png"
+                        width="200"
+                        height="200"
+                        id="buchet-img"
+                        alt=""
+                    />
+                </div>
+                <div id="letter">
+                    <div class="letter-inner">
+                        <header class="letter-section letter-greeting-section">
+                            <div class="letter-ornament">
+                                <span class="ornament-line"></span>
+                                <svg
+                                    class="ornament-icon"
+                                    viewBox="0 0 24 24"
+                                    fill="currentColor"
+                                    aria-hidden="true"
+                                >
+                                    <path
+                                        d="M12 21s-7.5-4.5-9.5-9C1 9 2.5 5 6 5c2 0 3.5 1 4 2.5C10.5 6 12 5 14 5c3.5 0 5 4 3.5 7-2 4.5-5.5 9-5.5 9z"
+                                    />
+                                </svg>
+                                <span class="ornament-line"></span>
+                            </div>
+                            <p class="imperial letter-greeting text-8xl">
+                                Ioana &amp; Mihai
+                            </p>
+                            <p class="ink-body text-xl">
+                                Vă invităm să petreceți alături de noi cea mai
+                                specială zi a vieții noastre — ziua căsătoriei
+                                noastre.
+                            </p>
+                        </header>
+
+                        <section class="letter-section parents-section">
+                            <h2
+                                class="section-title cinzel text-xl upper medium"
+                            >
+                                Cu binecuvântarea părinților
+                            </h2>
+                            <div class="parents-grid">
+                                <div class="parents-card">
+                                    <p
+                                        class="cinzel parents-label text-sm upper medium"
+                                    >
+                                        Părinții miresei
+                                    </p>
+                                    <p class="imperial parents-names text-5xl">
+                                        Elena &amp; Andrei Popescu
+                                    </p>
+                                </div>
+                                <div class="parents-divider">
+                                    <span class="imperial text-6xl">&amp;</span>
+                                </div>
+                                <div class="parents-card">
+                                    <p
+                                        class="cinzel parents-label text-sm upper medium"
+                                    >
+                                        Părinții mirelui
+                                    </p>
+                                    <p class="imperial parents-names text-5xl">
+                                        Maria &amp; Ion Ionescu
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="letter-section godparents-section">
+                            <h2
+                                class="section-title cinzel text-xl upper medium"
+                            >
+                                Alături de nași
+                            </h2>
+                            <p class="imperial godparents-names text-6xl">
+                                Cristina &amp; Vlad Dumitrescu
+                            </p>
+                        </section>
+
+                        <section class="letter-section quote-section">
+                            <svg
+                                class="quote-icon"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                                aria-hidden="true"
+                            >
+                                <path
+                                    d="M7 7h4v4H7v3c0 2 1 3 3 3v2c-3 0-5-2-5-5V7zm9 0h4v4h-4v3c0 2 1 3 3 3v2c-3 0-5-2-5-5V7z"
+                                />
+                            </svg>
+                            <blockquote class="letter-quote text-2xl">
+                                Așa că nu mai sunt doi, ci un singur trup. Deci,
+                                ce a împreunat Dumnezeu, omul să nu despartă.
+                            </blockquote>
+                        </section>
+
+                        <section class="letter-section events-section">
+                            <h2
+                                class="section-title cinzel text-xl upper medium"
+                            >
+                                Programul zilei
+                            </h2>
+                            <div class="timeline">
+                                <span
+                                    class="timeline-line"
+                                    aria-hidden="true"
+                                ></span>
+                                <article class="timeline-item">
+                                    <div class="timeline-node">
+                                        <span
+                                            class="timeline-node-ring"
+                                            aria-hidden="true"
+                                        ></span>
+                                        <svg
+                                            viewBox="0 0 32 32"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            aria-hidden="true"
+                                        >
+                                            <circle cx="12" cy="20" r="7" />
+                                            <circle cx="20" cy="20" r="7" />
+                                            <path
+                                                d="M10 9l2-3 2 3M18 9l2-3 2 3"
+                                            />
+                                        </svg>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <p
+                                            class="event-time cinzel text-xl upper semi-bold"
+                                        >
+                                            12:00
+                                        </p>
+                                        <h3
+                                            class="event-name imperial text-5xl"
+                                        >
+                                            Cununia civilă
+                                        </h3>
+                                        <p class="event-place text-xl medium">
+                                            Casa Căsătoriilor
+                                        </p>
+                                        <p class="event-address text-lg">
+                                            Str. Exemplu nr. 12, București
+                                        </p>
+                                        <a
+                                            class="event-link text-sm upper medium"
+                                            href="https://maps.google.com/?q=Casa+Casatoriilor+Bucuresti"
+                                            target="_blank"
+                                            rel="noopener"
+                                        >
+                                            <svg
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="1.6"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                aria-hidden="true"
+                                            >
+                                                <path
+                                                    d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z"
+                                                />
+                                                <circle
+                                                    cx="12"
+                                                    cy="9"
+                                                    r="2.5"
+                                                />
+                                            </svg>
+                                            <span>Vezi pe hartă</span>
+                                        </a>
+                                    </div>
+                                </article>
+
+                                <article class="timeline-item">
+                                    <div class="timeline-node">
+                                        <span
+                                            class="timeline-node-ring"
+                                            aria-hidden="true"
+                                        ></span>
+                                        <svg
+                                            viewBox="0 0 32 32"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            aria-hidden="true"
+                                        >
+                                            <path d="M16 3v6M13 6h6" />
+                                            <path d="M6 28V14l10-5 10 5v14" />
+                                            <path d="M3 28h26" />
+                                            <path d="M13 28v-7h6v7M16 17v4" />
+                                        </svg>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <p
+                                            class="event-time cinzel text-xl upper semi-bold"
+                                        >
+                                            15:00
+                                        </p>
+                                        <h3
+                                            class="event-name imperial text-5xl"
+                                        >
+                                            Cununia religioasă
+                                        </h3>
+                                        <p class="event-place text-xl medium">
+                                            Biserica Sf. Nicolae
+                                        </p>
+                                        <p class="event-address text-lg">
+                                            Str. Bisericii nr. 5, București
+                                        </p>
+                                        <a
+                                            class="event-link text-sm upper medium"
+                                            href="https://maps.google.com/?q=Biserica+Sf+Nicolae+Bucuresti"
+                                            target="_blank"
+                                            rel="noopener"
+                                        >
+                                            <svg
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="1.6"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                aria-hidden="true"
+                                            >
+                                                <path
+                                                    d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z"
+                                                />
+                                                <circle
+                                                    cx="12"
+                                                    cy="9"
+                                                    r="2.5"
+                                                />
+                                            </svg>
+                                            <span>Vezi pe hartă</span>
+                                        </a>
+                                    </div>
+                                </article>
+
+                                <article class="timeline-item">
+                                    <div class="timeline-node">
+                                        <span
+                                            class="timeline-node-ring"
+                                            aria-hidden="true"
+                                        ></span>
+                                        <svg
+                                            viewBox="0 0 32 32"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="1.5"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            aria-hidden="true"
+                                        >
+                                            <path
+                                                d="M8 4l-2 8c-.4 2 1 4 3 4s3.4-2 3-4l-2-8z"
+                                            />
+                                            <path d="M9 16v10M6 27h6" />
+                                            <path
+                                                d="M24 4l2 8c.4 2-1 4-3 4s-3.4-2-3-4l2-8z"
+                                            />
+                                            <path d="M23 16v10M20 27h6" />
+                                        </svg>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <p
+                                            class="event-time cinzel text-xl upper semi-bold"
+                                        >
+                                            18:00
+                                        </p>
+                                        <h3
+                                            class="event-name imperial text-5xl"
+                                        >
+                                            Petrecere
+                                        </h3>
+                                        <p class="event-place text-xl medium">
+                                            Restaurant Elegance
+                                        </p>
+                                        <p class="event-address text-lg">
+                                            Bd. Iuliu Maniu nr. 100, București
+                                        </p>
+                                        <a
+                                            class="event-link text-sm upper medium"
+                                            href="https://maps.google.com/?q=Restaurant+Elegance+Bucuresti"
+                                            target="_blank"
+                                            rel="noopener"
+                                        >
+                                            <svg
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="1.6"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                aria-hidden="true"
+                                            >
+                                                <path
+                                                    d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z"
+                                                />
+                                                <circle
+                                                    cx="12"
+                                                    cy="9"
+                                                    r="2.5"
+                                                />
+                                            </svg>
+                                            <span>Vezi pe hartă</span>
+                                        </a>
+                                    </div>
+                                </article>
+                            </div>
+                        </section>
+
+                        <section class="letter-section countdown-section">
+                            <p class="cinzel countdown-date text-6xl medium">
+                                26.07.2027
+                            </p>
+                            <h2
+                                class="section-title cinzel text-xl upper medium"
+                            >
+                                Până la ziua cea mare
+                            </h2>
+                            <div
+                                class="countdown"
+                                id="letter-countdown"
+                                data-targetdate="2027-07-26T12:00:00"
+                            ></div>
+                        </section>
+
+                        <section class="letter-section map-section">
+                            <h2
+                                class="section-title cinzel text-xl upper medium"
+                            >
+                                Locația petrecerii
+                            </h2>
+                            <p class="map-place imperial text-5xl">
+                                Restaurant Elegance
+                            </p>
+                            <p class="map-address text-lg">
+                                Bd. Iuliu Maniu nr. 100, București
+                            </p>
+                            <div class="map-frame">
+                                <iframe
+                                    src="https://maps.google.com/maps?q=Bucuresti&amp;hl=ro&amp;z=14&amp;output=embed"
+                                    loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"
+                                    title="Locația petrecerii"
+                                ></iframe>
+                            </div>
+                        </section>
+
+                        <section class="letter-section dress-code-section">
+                            <h2
+                                class="section-title cinzel text-xl upper medium"
+                            >
+                                Dress code
+                            </h2>
+                            <p class="ink-body text-lg">
+                                Ținută elegantă, în tonuri pastel și aurii.
+                            </p>
+                            <div class="dress-palette" aria-hidden="true">
+                                <span style="background: #f4ead5"></span>
+                                <span style="background: #e8d4b9"></span>
+                                <span style="background: #c9a97d"></span>
+                                <span style="background: #a07a4a"></span>
+                                <span style="background: #5a3a20"></span>
+                            </div>
+                        </section>
+
+                        <section class="letter-section rsvp-section">
+                            <h2
+                                class="section-title cinzel text-xl upper medium"
+                            >
+                                Confirmă prezența
+                            </h2>
+                            <p class="ink-body text-lg">
+                                Ne dorim să te avem alături. Te rugăm să ne
+                                confirmi prezența până pe
+                                <strong>1 iulie 2027</strong>.
+                            </p>
+                            <a
+                                class="rsvp-button cinzel text-base semi-bold upper"
+                                href="https://wa.me/40712345678?text=Confirm%20prezenta%20la%20nunta%20Ioanei%20si%20a%20lui%20Mihai"
+                                target="_blank"
+                                rel="noopener"
+                            >
+                                <svg
+                                    class="rsvp-icon"
+                                    viewBox="0 0 24 24"
+                                    fill="currentColor"
+                                    aria-hidden="true"
+                                >
+                                    <path
+                                        d="M17.6 6.32A7.85 7.85 0 0 0 12.05 4a7.94 7.94 0 0 0-6.88 11.9L4 20l4.2-1.1a7.94 7.94 0 0 0 3.83.97h.01c4.38 0 7.94-3.56 7.94-7.94 0-2.12-.82-4.12-2.38-5.61zm-5.55 12.21h-.01a6.6 6.6 0 0 1-3.36-.92l-.24-.14-2.49.65.66-2.43-.16-.25a6.6 6.6 0 0 1-1.01-3.5c0-3.64 2.96-6.6 6.6-6.6 1.76 0 3.42.69 4.67 1.93a6.55 6.55 0 0 1 1.93 4.67c0 3.64-2.96 6.6-6.6 6.6zm3.62-4.95c-.2-.1-1.17-.58-1.35-.65-.18-.07-.31-.1-.45.1-.13.2-.51.65-.63.78-.12.13-.23.15-.43.05-.2-.1-.84-.31-1.6-.99-.6-.53-1-1.18-1.12-1.38-.12-.2-.01-.31.09-.41.09-.09.2-.23.3-.35.1-.12.13-.2.2-.33.07-.13.03-.25-.02-.35-.05-.1-.45-1.08-.62-1.48-.16-.39-.33-.34-.45-.34l-.39-.01c-.13 0-.35.05-.54.25-.18.2-.7.69-.7 1.67 0 .98.72 1.93.82 2.06.1.13 1.41 2.16 3.42 3.03.48.2.85.33 1.14.42.48.15.92.13 1.26.08.39-.06 1.17-.48 1.34-.94.16-.46.16-.86.12-.94-.04-.08-.18-.13-.38-.23z"
+                                    />
+                                </svg>
+                                <span>Confirmă pe WhatsApp</span>
+                            </a>
+                        </section>
+
+                        <footer class="letter-section signature-section">
+                            <div class="letter-ornament">
+                                <span class="ornament-line"></span>
+                                <svg
+                                    class="ornament-icon"
+                                    viewBox="0 0 24 24"
+                                    fill="currentColor"
+                                    aria-hidden="true"
+                                >
+                                    <path
+                                        d="M12 21s-7.5-4.5-9.5-9C1 9 2.5 5 6 5c2 0 3.5 1 4 2.5C10.5 6 12 5 14 5c3.5 0 5 4 3.5 7-2 4.5-5.5 9-5.5 9z"
+                                    />
+                                </svg>
+                                <span class="ornament-line"></span>
+                            </div>
+                            <p class="imperial letter-signature text-7xl">
+                                Ioana &amp; Mihai
+                            </p>
+                            <p class="cinzel letter-date text-lg medium upper">
+                                26 · 07 · 2027
+                            </p>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>
