@@ -13,6 +13,10 @@ const INTRO_TARGETS = [
 
 let smoother = null;
 
+const DEMO_PARAMS = new URLSearchParams(location.search);
+const DEMO_MODE = DEMO_PARAMS.get("demo") === "1";
+const DEMO_SCROLL_DURATION = parseFloat(DEMO_PARAMS.get("speed")) || 26;
+
 document.addEventListener("DOMContentLoaded", (event) => {
     gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
 
@@ -28,13 +32,39 @@ document.addEventListener("DOMContentLoaded", (event) => {
         });
 
         initLazyImagesRefresh();
-        initEnvelope();
         initHearts();
         initCountdown();
-        initIntro();
+        const introTl = initIntro();
         ScrollTrigger.refresh();
+
+        if (DEMO_MODE) startDemo(introTl);
+        else initEnvelope();
     });
 });
+
+function startDemo(introTl) {
+    // Lasă intro-ul să se termine, apoi deschide plicul automat.
+    const wait = (introTl ? introTl.duration() : 3) + 1.2;
+    gsap.delayedCall(wait, openEnvelope);
+}
+
+function startAutoScroll() {
+    // Pornit la finalul deschiderii plicului; derulează scrisoarea cap-coadă.
+    gsap.delayedCall(0.6, () => {
+        ScrollTrigger.refresh();
+        const maxScroll = ScrollTrigger.maxScroll(window);
+        const proxy = { y: smoother ? smoother.scrollTop() : window.scrollY };
+        gsap.to(proxy, {
+            y: maxScroll,
+            duration: DEMO_SCROLL_DURATION,
+            ease: "none",
+            onUpdate: () => {
+                if (smoother) smoother.scrollTop(proxy.y);
+                else window.scrollTo(0, proxy.y);
+            },
+        });
+    });
+}
 
 function initIntro() {
     const title = document.getElementById("intro-title");
@@ -325,7 +355,10 @@ function openEnvelope() {
                     },
                     "<",
                 )
-                .set(overlayEl, { display: "none" });
+                .set(overlayEl, { display: "none" })
+                .add(() => {
+                    if (DEMO_MODE) startAutoScroll();
+                });
         });
 
     return tl;
