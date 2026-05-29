@@ -434,57 +434,61 @@ function initLetterAnimations() {
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: section,
-                start: "top 85%",
-                toggleActions: "play none none reverse",
+                start: "top 95%",
+                toggleActions: "play none none none",
             },
         });
-        const reveal = makeReveal(section, tl, { position: ">-0.15" });
+        const reveal = makeReveal(section, tl, {
+            position: ">-0.1",
+            duration: 0.3,
+            stagger: 0.05,
+        });
 
         if (section.classList.contains("events-section")) {
-            reveal(".section-title", { duration: 0.4, position: 0 });
+            reveal(".section-title", { duration: 0.25, position: 0 });
         } else if (section.classList.contains("countdown-section")) {
-            reveal(".countdown-date", { duration: 0.5, position: 0 });
-            reveal(".section-title", { duration: 0.4 });
-            reveal(".countdown-item", { y: 20, duration: 0.45 });
+            reveal(".countdown-date", { duration: 0.3, position: 0 });
+            reveal(".section-title", { duration: 0.25 });
+            reveal(".countdown-item", { y: 16, duration: 0.3, stagger: 0.05 });
         } else if (section.classList.contains("map-section")) {
-            reveal(".section-title", { duration: 0.4, position: 0 });
-            reveal(".map-place", { duration: 0.5 });
-            reveal(".map-address", { duration: 0.5 });
-            reveal(".map-frame", { duration: 0.7 });
+            reveal(".section-title", { duration: 0.25, position: 0 });
+            reveal(".map-place", { duration: 0.3 });
+            reveal(".map-address", { duration: 0.3 });
+            reveal(".map-frame", { duration: 0.4 });
         } else if (section.classList.contains("dress-code-section")) {
-            reveal(".section-title", { duration: 0.4, position: 0 });
-            reveal(".ink-body", { duration: 0.5 });
+            reveal(".section-title", { duration: 0.25, position: 0 });
+            reveal(".ink-body", { duration: 0.3 });
             reveal(".dress-palette span", {
-                y: 12,
+                y: 10,
                 scale: 0.4,
-                duration: 0.45,
+                duration: 0.3,
                 ease: "back.out(2)",
-                stagger: 0.06,
+                stagger: 0.04,
             });
         } else if (section.classList.contains("rsvp-section")) {
-            reveal(".section-title", { duration: 0.4, position: 0 });
-            reveal(".ink-body", { duration: 0.5 });
+            reveal(".section-title", { duration: 0.25, position: 0 });
+            reveal(".ink-body", { duration: 0.3 });
             reveal(".rsvp-button", {
-                y: 16,
+                y: 14,
                 scale: 0.92,
-                duration: 0.55,
+                duration: 0.35,
                 ease: "back.out(1.6)",
             });
         } else if (section.classList.contains("signature-section")) {
-            reveal(".letter-ornament", { y: 12, duration: 0.4, position: 0 });
+            reveal(".letter-ornament", { y: 10, duration: 0.25, position: 0 });
             splitChars(
                 section.querySelector(".letter-signature"),
                 tl,
                 {
-                    x: 50,
+                    x: 30,
                     opacity: 0,
-                    duration: 0.35,
-                    stagger: 0.025,
+                    duration: 0.25,
+                    stagger: 0.015,
                     ease: "power3.out",
                 },
-                ">-0.1",
+                ">-0.05",
             );
-            reveal(".letter-date", { duration: 0.5 });
+            reveal(".letter-date", { duration: 0.3 });
         }
     }
 
@@ -511,9 +515,9 @@ function initLetterAnimations() {
             ease: "none",
             scrollTrigger: {
                 trigger: items[0],
-                start: "top 90%",
+                start: "top 95%",
                 endTrigger: items[items.length - 1],
-                end: "bottom 70%",
+                end: "bottom 75%",
                 scrub: true,
             },
         });
@@ -524,15 +528,15 @@ function initLetterAnimations() {
             const itemTl = gsap.timeline({
                 scrollTrigger: {
                     trigger: item,
-                    start: "top 78%",
-                    toggleActions: "play none none reverse",
+                    start: "top 90%",
+                    toggleActions: "play none none none",
                 },
             });
             itemTl
                 .to(item, {
                     y: 0,
                     opacity: 1,
-                    duration: 0.6,
+                    duration: 0.35,
                     ease: "power3.out",
                 })
                 .to(
@@ -540,10 +544,10 @@ function initLetterAnimations() {
                     {
                         scale: 1,
                         opacity: 1,
-                        duration: 0.5,
+                        duration: 0.3,
                         ease: "back.out(2.2)",
                     },
-                    "-=0.25",
+                    "-=0.15",
                 );
             if (ring) {
                 itemTl
@@ -552,19 +556,19 @@ function initLetterAnimations() {
                         {
                             scale: 1.4,
                             opacity: 0.7,
-                            duration: 0.6,
+                            duration: 0.4,
                             ease: "power2.out",
                         },
-                        "-=0.35",
+                        "-=0.25",
                     )
                     .to(
                         ring,
                         {
                             opacity: 0,
-                            duration: 0.5,
+                            duration: 0.3,
                             ease: "power2.out",
                         },
-                        "-=0.3",
+                        "-=0.2",
                     );
             }
         });
