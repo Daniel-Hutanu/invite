@@ -244,9 +244,12 @@ function openEnvelope() {
             "-=0.7",
         )
         .add(() => {
-            const r = fakeEl.getBoundingClientRect();
             const vw = window.innerWidth;
             const vh = window.innerHeight;
+            overlayEl.style.width = vw + "px";
+            overlayEl.style.height = vh + "px";
+
+            const r = fakeEl.getBoundingClientRect();
             const sx = r.width / vw;
             const sy = r.height / vh;
             const tx = r.left + r.width / 2 - vw / 2;
@@ -757,9 +760,18 @@ function initHearts() {
     spawn();
     start();
 
+    let lastWidth = width;
+    let resizeTimer = null;
     window.addEventListener("resize", () => {
-        resize();
-        spawn();
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            const widthChanged = Math.abs(window.innerWidth - lastWidth) > 4;
+            resize();
+            if (widthChanged) {
+                lastWidth = width;
+                spawn();
+            }
+        }, 150);
     });
 
     document.addEventListener("visibilitychange", () => {

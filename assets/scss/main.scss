@@ -47,11 +47,18 @@ button {
     color: $white;
 }
 
+html,
+body {
+    overscroll-behavior: none;
+    background: $bg;
+}
+
 html {
     font-family: "EB Garamond", serif;
     font-optical-sizing: auto;
     font-size: 16px;
     font-weight: 400;
+    -webkit-text-size-adjust: 100%;
 }
 
 .container {
@@ -86,9 +93,6 @@ strong {
     text-align: center;
 }
 
-body {
-    background: $bg;
-}
 .imperial {
     font-family: "Imperial Script", cursive;
     font-weight: 400;
@@ -431,6 +435,7 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
+    height: 100dvh;
     background: #ffffff;
     z-index: 100;
     visibility: hidden;
@@ -500,7 +505,7 @@ body {
 #letter {
     display: none;
     min-height: 100vh;
-    min-height: 100svh;
+    min-height: 100dvh;
     background: linear-gradient(180deg, #ffffff 0%, #fbf6ee 100%);
     padding: 4rem 2rem 8rem;
     position: relative;
@@ -926,7 +931,7 @@ body {
 
 .i-scene-wrapper {
     min-height: 100vh;
-    min-height: 100svh;
+    min-height: 100dvh;
     position: relative;
     display: flex;
     align-items: center;
