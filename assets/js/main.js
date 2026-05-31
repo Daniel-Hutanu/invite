@@ -223,7 +223,7 @@ function openEnvelope() {
         )
         .set(".cover", { zIndex: 2 })
         .to(
-            heroFadeTargets,
+            "#hero-title",
             {
                 autoAlpha: 0,
                 y: -20,
