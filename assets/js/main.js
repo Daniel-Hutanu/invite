@@ -38,6 +38,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
             introTl.eventCallback("onComplete", () => {
                 document.dispatchEvent(new Event("invitation:intro-complete"));
             });
+
+            // Demo (?demo=1): primele 1.2s ecranul rămâne gol (doar fundalul,
+            // nici măcar inimioarele) — toată animația de intro e pe pauză, ca
+            // să poți pune un text curat peste la editarea video-ului.
+            if (new URLSearchParams(location.search).get("demo") === "1") {
+                introTl.pause(0);
+                gsap.delayedCall(1.2, () => introTl.play());
+            }
         }
     });
 });
